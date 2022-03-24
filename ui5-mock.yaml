@@ -1,0 +1,44 @@
+specVersion: "2.4"
+metadata:
+  name: traveloverview
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: https://45f514af-f57b-4579-990b-8b70ea328491.abap.us10.hana.ondemand.com
+            scp: true
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: 1.96.7
+    - name: sap-fe-mockserver
+      beforeMiddleware: fiori-tools-proxy
+      configuration:
+        service:
+          - urlBasePath: /sap/opu/odata/sap/ZUI_FE_BOOKING_001515_O2
+            name: ""
+            metadataXmlPath: ./webapp/localService/mainService/metadata.xml
+            mockdataRootPath: ./webapp/localService/mainService/mockdata
+            generateMockData: true
+          - urlPath: /sap/opu/odata4/sap/zui_fe_travel_001515_o4/srvd/sap/zui_fe_travel_001515_o4/0001/
+            metadataXmlPath: ./webapp/localService/zui_fe_travel_001515_o4/metadata.xml
+            mockdataRootPath: ./webapp/localService/zui_fe_travel_001515_o4/mockdata
+            generateMockData: true
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: sap.fe.demo.traveloverview
+        ui5Theme: sap_fiori_3
