@@ -1,0 +1,19 @@
+{
+  "manifest.json": 1648072328243,
+  "i18n/i18n.properties": 1648067220252,
+  "utils/locate-reuse-libs.js": 1648067220255,
+  "localService/mockserver.js": 1648067220252,
+  "Component.js": 1648067220242,
+  "manifest-bundle.zip": 1648073850381,
+  "Component-preload.js": 1648073850757,
+  "localService/mockserver-dbg.js": 1648067220252,
+  "utils/locate-reuse-libs-dbg.js": 1648067220255,
+  "Component-dbg.js": 1648067220242,
+  "localService/zui_fe_travel_001515_o4/metadata.xml": 1648068376405,
+  "localService/mainService/ZUI_FE_BOOKING_001515_O2_VAN.xml": 1648067220256,
+  "localService/mainService/metadata.xml": 1648067220271,
+  "test/flpSandbox.html": 1648067220254,
+  "annotations/annotation0.xml": 1648071133495,
+  "annotations/annotation.xml": 1648071310344,
+  "index.html": 1648067220242
+}

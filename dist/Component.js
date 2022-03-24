@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ovp/app/Component"],function(e){return e.extend("sap.fe.demo.traveloverview.Component",{metadata:{manifest:"json"}})});
